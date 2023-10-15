@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="custom_sale_report" inherit_id="sale.report_saleorder_document">
+            <xpath expr="//div[@class='page']" position="inside">
+                <table>
+                    <tr t-if="doc.test">
+                        <td><strong>Test: </strong></td>
+                        <td t-esc="doc.test" />
+                    </tr>
+                    <tr t-if="not doc.test">
+                        <td colspan="2" align="center" style="font-weight: bold;">Поле test пустое!!!</td>
+                    </tr>
+                </table>
+            </xpath>
+        </template>
+    </data>
+</odoo>

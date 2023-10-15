@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_order_form_inherited" model="ir.ui.view">
+            <field name="name">sale.order.form.inherited</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="user_id" position="before">
+                        <field name="delivery_responsible" required="1"/>
+                        <field name="test" attrs="{'readonly': [('state', 'not in', ('draft',))]}"/>
+                    </field>
+                </data>
+            </field>
+        </record>
+
+    </data>
+</odoo>
